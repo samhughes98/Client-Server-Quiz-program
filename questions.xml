@@ -1,0 +1,29 @@
+<?xml version = "1.0"?>
+<bysam>
+<Question-1>
+   <question number ="1">
+<quizquestion> what is the capital city of england </quizquestion>
+      <answera>Bristol</answera>
+      <answerb>Cardiff</answerb>
+      <answerc>London</answerc>
+   </question>
+  </Question-1>
+  
+  <Question-2>
+  <question number ="2">
+<quizquestion> What is the boiling point of water </quizquestion>
+      <answera>100 </answera>
+      <answerb>200</answerb>
+      <answerc>1</answerc>
+   </question>
+  </Question-2>
+  
+<Question-3>  
+   <question number ="3">
+<quizquestion> What year did the moon landing happen </quizquestion>
+      <answera>1900</answera>
+      <answerb>1966</answerb>
+      <answerc>2001</answerc>
+   </question>
+</Question-3>
+ </bysam>

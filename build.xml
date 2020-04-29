@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="JavaGame">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="13"/>
+    <property name="source" value="13"/>
+    <path id="JavaGame.classpath">
+        <pathelement location="bin"/>
+    </path>
+    <path id="run.ConsoleReader.classpath">
+        <path refid="JavaGame.classpath"/>
+    </path>
+    <path id="run.readfile.classpath">
+        <path refid="JavaGame.classpath"/>
+    </path>
+    <path id="run.SimpleServer (1).classpath">
+        <path refid="JavaGame.classpath"/>
+    </path>
+    <path id="run.WriteToFile.classpath">
+        <path refid="JavaGame.classpath"/>
+    </path>
+    <path id="run.xmlparser.classpath">
+        <path refid="JavaGame.classpath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.ucls"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="JavaGame.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="ConsoleReader">
+        <java classname="cmet.ac.sockets.servers.ConsoleReader" failonerror="true" fork="yes">
+            <classpath refid="run.ConsoleReader.classpath"/>
+        </java>
+    </target>
+    <target name="readfile">
+        <java classname="cmet.ac.sockets.clients.readfile" failonerror="true" fork="yes">
+            <classpath refid="run.readfile.classpath"/>
+        </java>
+    </target>
+    <target name="SimpleServer (1)">
+        <java classname="cmet.ac.sockets.servers.SimpleServer" failonerror="true" fork="yes">
+            <classpath refid="run.SimpleServer (1).classpath"/>
+        </java>
+    </target>
+    <target name="WriteToFile">
+        <java classname="cmet.ac.sockets.servers.WriteToFile" failonerror="true" fork="yes">
+            <classpath refid="run.WriteToFile.classpath"/>
+        </java>
+    </target>
+    <target name="xmlparser">
+        <java classname="cmet.ac.sockets.servers.xmlparser" failonerror="true" fork="yes">
+            <classpath refid="run.xmlparser.classpath"/>
+        </java>
+    </target>
+</project>
